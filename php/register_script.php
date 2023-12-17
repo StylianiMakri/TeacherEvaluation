@@ -1,13 +1,13 @@
 <?php
-include 'config.php';
-$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+// Database connection
+$conn = mysqli_connect("localhost","root" ,"" , "teacherevaluationsystem");
 
 // Check connection
 if (!$conn) {
- die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-// Get the form data
+// Get form data
 $type = $_POST['type'];
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -17,26 +17,22 @@ $dateofbirth = $_POST['dateofbirth'];
 $yearofstudy = $_POST['yearofstudy'];
 $phone = $_POST['phone'];
 
-// Print out the form data for debugging
-print_r($_POST);
-
 // Hash the password
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 // Insert the data into the database
 if ($type == 'student') {
- $sql = "INSERT INTO students (email, password, name, lastname, dateofbirth, yearofstudy, phone) VALUES ('$email', '$hashed_password', '$name', '$lastname', '$dateofbirth', '$yearofstudy', '$phone')";
+    $sql = "INSERT INTO students (email, password, name, lastname, dateofbirth, yearofstudy, phone) VALUES ('$email', '$hashed_password', '$name', '$lastname', '$dateofbirth', '$yearofstudy', '$phone')";
 } else {
- $sql = "INSERT INTO teachers (email, password, name, lastname, dateofbirth, phone) VALUES ('$email', '$hashed_password', '$name', '$lastname', '$dateofbirth', '$phone')";
+    $sql = "INSERT INTO teachers (email, password, name, lastname, dateofbirth, phone) VALUES ('$email', '$hashed_password', '$name', '$lastname', '$dateofbirth', '$phone')";
 }
 
 if (mysqli_query($conn, $sql)) {
- echo "New record created successfully";
+    echo "New record created successfully";
 } else {
- echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 // Close the connection
 mysqli_close($conn);
-
 ?>
