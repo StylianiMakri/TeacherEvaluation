@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Register Page</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+       }
+       form {
+           width: 300px;
+           margin: 0 auto;
+       }
+       input[type=text], input[type=password], select {
+           width: 100%;
+           padding: 12px 20px;
+           margin: 8px 0;
+           display: inline-block;
+           border: 1px solid #ccc;
+           box-sizing: border-box;
+       }
+       button {
+           background-color: #a671aa;
+           color: white;
+           padding: 14px 20px;
+           margin: 8px 0;
+           border: none;
+           cursor: pointer;
+           width: 100%;
+       }
+       button:hover {
+           opacity: 0.8;
+       }
+   </style>
+</head>
+<body>
+    <form action="../php/register_script.php" method="post">
+       <label for="type"><strong>User Type</strong></label>
+       <select id="type" name="type">
+           <option value="student">Student</option>
+           <option value="teacher">Teacher</option>
+       </select>
+       <label for="email"><strong>Email</strong></label>
+       <input type="text" placeholder="Enter Email" name="email" required>
+       <label for="password"><strong>Password</strong></label>
+       <input type="password" placeholder="Enter Password" name="password" required>
+       <label for="name"><strong>Name</strong></label>
+       <input type="text" placeholder="Enter Name" name="name" required>
+       <label for="lastname"><strong>Last Name</strong></label>
+       <input type="text" placeholder="Enter Lastname" name="lastname" required>
+       <label for="dateofbirth"><strong>Date of Birth</strong></label>
+       <input type="date" name="dateofbirth" required>
+       <label for="yearofstudy"><strong>Year of Study</strong></label>
+       <input type="number" name="yearofstudy" required>
+       <label for="phone"><strong>Phone Number</strong></label>
+       <input type="tel" name="phone" required>
+       <button type="submit">Register</button>
+   </form>
+</body>
+</html>
