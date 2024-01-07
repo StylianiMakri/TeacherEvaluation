@@ -18,16 +18,22 @@
   $stmt->bind_param("s", $code);
   $stmt->execute();
   $result = $stmt->get_result();
-  $row = $result->fetch_assoc();
-  $id = $row['id'];
+ 
+  // Check if a row was returned
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $id = $row['id'];
+}
 
-  // Retrieve the questions associated with the teacher ID
-  $sql = "SELECT * FROM evaluationquestions WHERE id = ?";
+  // Retrieve the questions
+  $sql = "SELECT * FROM evaluationquestions";
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("i", $id);
   $stmt->execute();
   $result = $stmt->get_result();
 
+   // Start the form
+ echo '<form action="../php/save_answers_script.php" method="post">';
+ 
   // Display the questions to the student
   while ($row = $result->fetch_assoc()) {
       echo "<p>" . $row['question'] . "</p>";
