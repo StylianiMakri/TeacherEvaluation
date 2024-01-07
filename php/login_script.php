@@ -41,7 +41,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                $_SESSION['user_id'] = $id;
                // Redirect based on user type
                if ($type == 'student') {
-                  header("Location: ../html/student.html");
+                  header("Location: ../html/students.html");
                } else {
                   header("Location: ../html/teacher.html");
                }
