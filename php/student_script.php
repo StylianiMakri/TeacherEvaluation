@@ -32,17 +32,23 @@ if ($result->num_rows > 0) {
   $result = $stmt->get_result();
 
    // Start the form
- echo '<form action="../php/save_answers_script.php" method="post">';
- 
-  // Display the questions to the student
-  while ($row = $result->fetch_assoc()) {
+   echo '<form action="../php/save_answers_script.php" method="post">';
+
+   // Display the questions to the student
+   while ($row = $result->fetch_assoc()) {
       echo "<p>" . $row['question'] . "</p>";
       echo "<select name='answer'>";
       for ($i = 1; $i <= 5; $i++) {
           echo "<option value='$i'>$i</option>";
       }
       echo "</select><br>";
-  }
+   }
+   
+   // Add a submit button
+   echo '<button type="submit">Submit Answers</button>';
+   
+   echo '</form>';
+   
 
   // Close the connection
   mysqli_close($conn);
