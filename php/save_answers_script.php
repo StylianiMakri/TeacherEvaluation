@@ -14,13 +14,19 @@ $answers = $_POST;
 
 // Insert the answers into the database
 foreach ($answers as $question_id => $answer) {
-   $sql = "INSERT INTO answers (student_id, teacher_id, question_id, answer) VALUES (?, ?, ?, ?)";
-   $stmt = $conn->prepare($sql);
-   $stmt->bind_param("iiis", $_SESSION['user_id'], $id, $question_id, $answer); // Assuming $id contains the teacher_id
-   $stmt->execute();
- }
-
-
+   $check_teacher_id = "SELECT id FROM teachers WHERE id = ?";
+   $stmt_check = $conn->prepare($check_teacher_id);
+   $stmt_check->bind_param("i", $teacher_id);
+   $stmt_check->execute();
+   $result = $stmt_check->get_result();
+  
+      $sql = "INSERT INTO answers (student_id, teacher_id, question_id, answer) VALUES (?, ?, ?, ?)";
+      $stmt = $conn->prepare($sql);
+      $stmt->bind_param("iiis", $_SESSION['user_id'], $teacher_id, $question_id, $answer);
+      $stmt->execute();
+  
+  }
+  
  // Close the connection
  mysqli_close($conn);
  ?>
