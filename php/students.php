@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Answer Questions</title>
+    <link rel="stylesheet" type="text/css" href="../css/students_eval_styles.css">
+</head>
+<body>
 <?php
   session_start();
 

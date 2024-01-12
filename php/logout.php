@@ -9,6 +9,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to the login screen
-header("Location: http://localhost/TeacherEvaluation/html/login.html");
+header("Location: http://localhost/TeacherEvaluation/index.html");
 exit();
 ?>
