@@ -11,19 +11,7 @@
 
   // Get the code from the form
   $code = $_POST['code'];
-
-  // Retrieve the teacher ID associated with the code
-  $sql = "SELECT id FROM teachers WHERE code = ?";
-  $stmt = $conn->prepare($sql);
-  $stmt->bind_param("s", $code);
-  $stmt->execute();
-  $result = $stmt->get_result();
  
-  // Check if a row was returned
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $id = $row['id'];
-}
 
   // Retrieve the questions
   $sql = "SELECT * FROM evaluationquestions";
@@ -44,6 +32,9 @@ if ($result->num_rows > 0) {
       echo "</select><br>";
    }
    
+   // Add a hidden input for the code
+echo "<input type='hidden' name='code' value='$code'>"; 
+
    // Add a submit button
    echo '<button type="submit">Submit Answers</button>';
    
