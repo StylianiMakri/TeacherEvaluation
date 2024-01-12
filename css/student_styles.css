@@ -1,10 +1,11 @@
 body {
+    font-family: Arial, sans-serif;
+    background-color: #d0c5dd;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
 }
 
 form {
@@ -12,17 +13,24 @@ form {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center; /* Center the content within the form */
+    width: 700px;
 }
 
-input[type="text"] {
-    width: calc(100% - 20px); /* Adjusted width to account for padding */
+p {
+    margin-top: 100;
+}
+
+select {
+    width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
+}
+
+input[type='hidden'] {
+    display: none; /* Hide hidden input */
 }
 
 button {
@@ -30,11 +38,11 @@ button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #995bdb;
+    background-color: #2484a1;
     color: #fff;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #9b7aa8;
 }
