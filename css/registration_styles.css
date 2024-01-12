@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block; /* Make labels display as block elements to stack them vertically */
+    margin-bottom: 5px; /* Add some bottom margin to separate labels from input fields */
+}
+
+input[type=text], input[type=password], select, input[type=date], input[type=number], input[type=tel] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4e5dd0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
