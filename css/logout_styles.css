@@ -11,14 +11,14 @@ body {
 
 h1 {
     text-align: center;
-    color: #007bff; /* Adjust the color as needed */
+    color: #007bff;
     margin-bottom: 10px;
 }
 
 p {
     text-align: center;
     margin-top: 10px;
-    color: #333; /* Adjust the color as needed */
+    color: #333;
 }
 
 form {
