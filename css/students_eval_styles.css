@@ -18,7 +18,7 @@ form {
 
 p {
     margin-top: 70;
-    margin-bottom: 10px; /* Increase the margin to provide more space between questions */
+    margin-bottom: 10px; 
 }
 
 select {
@@ -31,7 +31,7 @@ select {
 }
 
 input[type='hidden'] {
-    display: none; /* Hide hidden input */
+    display: none; 
 }
 
 button {
